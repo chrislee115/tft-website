@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <script src="script.js" type="text/javascript" async></script>
+        <script type="text/javascript" 
+                src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" async></script>
+        <title>
+            TFT Simulator
+        </title>
+        <div class="header">
+            <a href="index.html" class="logo">TFT Simulator</a>
+            <div class="header-right">
+                <a href="index.html">Home</a>
+                <a href="sim.html">Simulator</a>
+                <a href="champ.html">Champion Info</a>
+                <a href="wheel.html">Item Wheel</a>
+                <a class="active" href="builder.html">Item Builder</a>
+            </div>
+        </div>
+    </head>
+    <body>
+        <p><center>Click items to add to your bench to see what you can make!</center></p>
+        <div class="item-select">
+            <center>
+                <a id="bf" onclick="addItem('bf')"><img src="items/bf.png"></a>
+                <a id="rod" onclick="addItem('rod')"><img src="items/rod.png"></a>
+                <a id="bow" onclick="addItem('bow')"><img src="items/bow.png"></a>
+                <a id="belt" onclick="addItem('belt')"><img src="items/belt.png"></a>
+                <a id="vest" onclick="addItem('vest')"><img src="items/vest.png"></a>
+                <a id="cloak" onclick="addItem('cloak')"><img src="items/cloak.png"></a>
+                <a id="tear" onclick="addItem('tear')"><img src="items/tear.png"></a>
+                <a id="spat" onclick="addItem('spat')"><img src="items/spat.png"></a>
+                <button type="button" onclick="reset()"
+                        style="position: relative; bottom: 5.6px;">Reset</button>
+            </center>
+        </div>  
+        <p><center>Your Bench:</center></p>
+        <div class="bench">
+        </div>
+        <p><center>What you can make: </center></p>
+    </body>
+</html>
