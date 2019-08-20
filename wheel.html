@@ -21,57 +21,45 @@
     </head>
     <body>
         <p><center>Click an item to see it's combinations!</center></p>
-        <div class="item-select">
-            <center>
-                <a href="javascript:toggleDiv('bf')"><img src="items/bf.png"></a>
-                <a href="javascript:toggleDiv('rod');"><img src="items/rod.png"></a>
-                <a href="javascript:toggleDiv('bow');"><img src="items/bow.png"></a>
-                <a href="javascript:toggleDiv('belt');"><img src="items/belt.png"></a>
-                <a href="javascript:toggleDiv('vest');"><img src="items/vest.png"></a>
-                <a href="javascript:toggleDiv('cloak');"><img src="items/cloak.png"></a>
-                <a href="javascript:toggleDiv('tear');"><img src="items/tear.png"></a>
-                <a href="javascript:toggleDiv('spat');"><img src="items/spat.png"></a>
-            </center>
+        <div class="start">
+            <label id="show-bfmenu" for="toggle">
+                <div class="btn">
+                    <img class="toggleBtn menuBtn" src="items/bf.png">
+                </div>
+            </label>
         </div>
-        <div class="toggle" id="bf" style="display:none;">
-            <center>
-                <img src="items/bf.png">
-            </center>
-        </div>
-        <div class="toggle" id="rod" style="display:none;">
-            <center>
-                <img src="items/rod.png">
-            </center>
-        </div>
-        <div class="toggle" id="bow" style="display:none;">
-            <center>
-                <img src="items/bow.png">
-            </center>
-        </div>
-        <div class="toggle" id="belt" style="display:none;">
-            <center>
-                <img src="items/belt.png">
-            </center>
-        </div>
-        <div class="toggle" id="vest" style="display:none;">
-            <center>
-                <img src="items/vest.png">
-            </center>
-        </div>
-        <div class="toggle" id="cloak" style="display:none;">
-            <center>
-                <img src="items/cloak.png">
-            </center>
-        </div>
-        <div class="toggle" id="tear" style="display:none;">
-            <center>
-                <img src="items/tear.png">
-            </center>
-        </div>
-        <div class="toggle" id="spat" style="display:none;">
-            <center>
-                <img src="items/spat.png">
-            </center>
+        <div class="bfMenu">
+            <input type="checkbox" id="toggle"/>
+            <label id="show-bfmenu">
+                <!--extra bf for the center-->
+                <div class="btn">
+                    <img src="items/bf.png">
+                </div>
+                <div class="btn">
+                    <img src="items/bf.png">
+                </div>
+                <div class="btn">
+                    <img src="items/rod.png">
+                </div>
+                <div class="btn">
+                    <img src="items/bow.png">
+                </div>
+                <div class="btn">
+                    <img src="items/belt.png">
+                </div>
+                <div class="btn">
+                    <img src="items/vest.png">
+                </div>
+                <div class="btn">
+                    <img src="items/cloak.png">
+                </div>
+                <div class="btn">
+                    <img src="items/tear.png">
+                </div>
+                <div class="btn">
+                    <img src="items/spat.png">
+                </div>
+            </label>
         </div>
     </body>
 </html>
