@@ -161,35 +161,35 @@ input {position: absolute;}
 .btn:nth-child(9) {top:0px;left:0px;-webkit-transition-delay: 0.7s;transition-delay: 0.7s}
 
 /*TOP RIGHT*/
-input#toggle:checked ~ #show-menu .btn:nth-child(2) {
+input#toggle:checked ~ #show-bfmenu .btn:nth-child(2) {
   top:-150px;left:70px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 /*RIGHT TOP*/
-input#toggle:checked ~ #show-menu .btn:nth-child(3) {
+input#toggle:checked ~ #show-bfmenu .btn:nth-child(3) {
   top:-55px;left:150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 /*RIGHT BOTTOM*/
-input#toggle:checked ~ #show-menu .btn:nth-child(4) {
+input#toggle:checked ~ #show-bfmenu .btn:nth-child(4) {
   top:55px;left:150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 /*BOTTOM RIGHT*/
-input#toggle:checked ~ #show-menu .btn:nth-child(5) {
+input#toggle:checked ~ #show-bfmenu .btn:nth-child(5) {
   top:150px;left:70px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 /*BOTTOM LEFT*/
-input#toggle:checked ~ #show-menu .btn:nth-child(6) {
+input#toggle:checked ~ #show-bfmenu .btn:nth-child(6) {
   top:150px;left:-70px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 /*LEFT BOTTOM*/
-input#toggle:checked ~ #show-menu .btn:nth-child(7) {
+input#toggle:checked ~ #show-bfmenu .btn:nth-child(7) {
   top:55px;left:-150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 /*LFET TOP*/
-input#toggle:checked ~ #show-menu .btn:nth-child(8) {
+input#toggle:checked ~ #show-bfmenu .btn:nth-child(8) {
   top:-55px;left:-150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 /*TOP LEFT*/
-input#toggle:checked ~ #show-menu .btn:nth-child(9) {
+input#toggle:checked ~ #show-bfmenu .btn:nth-child(9) {
   top:-150px;left:-70px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
