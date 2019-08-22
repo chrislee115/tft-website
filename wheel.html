@@ -21,45 +21,103 @@
     </head>
     <body>
         <p><center>Click an item to see it's combinations!</center></p>
+        
         <div class="start">
-            <label id="show-bfmenu" for="toggle">
-                <div class="btn">
-                    <img class="toggleBtn menuBtn" src="items/bf.png">
-                </div>
-            </label>
+            <center>
+                <span>
+                    <input type="checkbox" id="bfMenu" onclick="ItemSelect(this.id)">
+                    <label for="bfMenu"><img src="items/bf.png" /></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="rodMenu" onclick="ItemSelect(this.id)">
+                    <label for="rodMenu"><img src="items/rod.png" /></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="bowMenu" onclick="ItemSelect(this.id)">
+                    <label for="bowMenu"><img src="items/bow.png" /></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="beltMenu" onclick="ItemSelect(this.id)">
+                    <label for="beltMenu"><img src="items/belt.png" /></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="vestMenu" onclick="ItemSelect(this.id)">
+                    <label for="vestMenu"><img src="items/vest.png" /></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="cloakMenu" onclick="ItemSelect(this.id)">
+                    <label for="cloakMenu"><img src="items/cloak.png" /></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="tearMenu" onclick="ItemSelect(this.id)">
+                    <label for="tearMenu"><img src="items/tear.png" /></label>
+                </span>
+                <span>
+                    <input type="checkbox" id="spatMenu" onclick="ItemSelect(this.id)">
+                    <label for="spatMenu"><img src="items/spat.png" /></label>
+                </span>
+            </center>
         </div>
-        <div class="bfMenu">
-            <input type="checkbox" id="toggle"/>
-            <label id="show-bfmenu">
-                <!--extra bf for the center-->
-                <div class="btn">
-                    <img src="items/bf.png">
-                </div>
-                <div class="btn">
-                    <img src="items/bf.png">
-                </div>
-                <div class="btn">
-                    <img src="items/rod.png">
-                </div>
-                <div class="btn">
-                    <img src="items/bow.png">
-                </div>
-                <div class="btn">
-                    <img src="items/belt.png">
-                </div>
-                <div class="btn">
-                    <img src="items/vest.png">
-                </div>
-                <div class="btn">
-                    <img src="items/cloak.png">
-                </div>
-                <div class="btn">
-                    <img src="items/tear.png">
-                </div>
-                <div class="btn">
-                    <img src="items/spat.png">
-                </div>
-            </label>
+        
+        <div class="menu" id="bfMenu">
+            <!--extra bf for the center-->
+            <div class="btn">
+                <img src="items/bf.png">
+            </div>
+            <div class="btn">
+                <img src="items/rod.png">
+            </div>
+            <div class="btn">
+                <img src="items/bow.png">
+            </div>
+            <div class="btn">
+                <img src="items/belt.png">
+            </div>
+            <div class="btn">
+                <img src="items/vest.png">
+            </div>
+            <div class="btn">
+                <img src="items/cloak.png">
+            </div>
+            <div class="btn">
+            <img src="items/tear.png">
+            </div>
+            <div class="btn">
+                <img src="items/spat.png">
+            </div>
+            <div class="btn" id="main">
+                <img src="items/bf.png">
+            </div>
+        </div>
+        <div class="menu" id="rodMenu">
+            <!--extra bf for the center-->
+            <div class="btn">
+                <img src="items/bf.png">
+            </div>
+            <div class="btn">
+                <img src="items/rod.png">
+            </div>
+            <div class="btn">
+                <img src="items/bow.png">
+            </div>
+            <div class="btn">
+                <img src="items/belt.png">
+            </div>
+            <div class="btn">
+                <img src="items/vest.png">
+            </div>
+            <div class="btn">
+                <img src="items/cloak.png">
+            </div>
+            <div class="btn">
+            <img src="items/tear.png">
+            </div>
+            <div class="btn">
+                <img src="items/spat.png">
+            </div>
+            <div class="btn" id="main">
+                <img src="items/rod.png">
+            </div>
         </div>
     </body>
 </html>

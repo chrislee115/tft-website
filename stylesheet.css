@@ -82,6 +82,9 @@ body {
     cursor: pointer;
 }
 
+input {
+    display:none;
+}
 //drag and drop classes
 .hold {
     border: solid #ccc 1px;
@@ -110,7 +113,7 @@ input {position: absolute;}
   user-select: none;
 }
 
-.bfMenu {
+.menu {
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -143,49 +146,16 @@ input {position: absolute;}
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.btn:not(:first-child) {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  
+.btn:not(#main) {
+  opacity:100;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter:alpha(Opacity=100);
   -webkit-transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
   transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
     top:0px;
     left:0px;
 }
 .btn:nth-child(1) {top:0px;left:0px}
-
-/*TOP RIGHT*/
-input#toggle:checked ~ #show-bfmenu .btn:nth-child(2) {
-  top:-150px;left:70px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-/*RIGHT TOP*/
-input#toggle:checked ~ #show-bfmenu .btn:nth-child(3) {
-  top:-55px;left:150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-/*RIGHT BOTTOM*/
-input#toggle:checked ~ #show-bfmenu .btn:nth-child(4) {
-  top:55px;left:150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-/*BOTTOM RIGHT*/
-input#toggle:checked ~ #show-bfmenu .btn:nth-child(5) {
-  top:150px;left:70px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-/*BOTTOM LEFT*/
-input#toggle:checked ~ #show-bfmenu .btn:nth-child(6) {
-  top:150px;left:-70px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-/*LEFT BOTTOM*/
-input#toggle:checked ~ #show-bfmenu .btn:nth-child(7) {
-  top:55px;left:-150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-/*LFET TOP*/
-input#toggle:checked ~ #show-bfmenu .btn:nth-child(8) {
-  top:-55px;left:-150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-/*TOP LEFT*/
-input#toggle:checked ~ #show-bfmenu .btn:nth-child(9) {
-  top:-150px;left:-70px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
 
 .menuBtn {
     position: absolute;
