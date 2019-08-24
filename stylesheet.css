@@ -41,6 +41,7 @@
 }
 body {
     background-color: white;
+    font-size: 32px;
     color: skyblue;
 }
 .hex {
