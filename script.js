@@ -38,12 +38,23 @@ function dragDrop() {
     this.append(champs);
 }
 //item functions
+$('input[type="checkbox"]').on('click', function(e) {
+    var checkbox = $(this);
+    if (checkbox.is(":checked")) {
+        e.preventDefault();
+        return false;
+    }
+})
+
+$('input[type="checkbox"]').on('change', function() {
+   $(this).siblings('input[type="checkbox"]').prop('checked', false);
+});
+
 function ItemSelect(divId) {
     var top = -150;
     var left = -75;
-    //skip the first element bc its the clicker
-    var targets = document.getElementsByClassName("menu")[1].querySelectorAll('.btn');
-    console.log(targets.length);
+    //select all the elements of the respective item menu
+    var targets = $('#' + divId + '.menu > .btn');
     for (var i = 0; i < targets.length - 1; ++i) {
         if (document.getElementById(divId).checked == false) {
             targets[i].style.top = "0px";
@@ -78,8 +89,30 @@ function ItemSelect(divId) {
                 top *= -1;
         }
         targets[i].style.top = top + "px";
-        targets[i].style.left = left + "px";
+        if (i < 4) { 
+            targets[i].style.left = left + "px";
+        }
+        else { 
+            targets[i].style.left = (left - 187) + "px";
+        }
+        console.log(top + " " + left);
         targets[i].style.opacity = 100;
         targets[i].style.filter = "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    //make sure the items that arent selected are not there;
+    var deselect = $('.menu').not('#' + divId).find('.btn').not('#main');
+    for (var i = 0; i < deselect.length; ++i) {
+        deselect[i].style.top = "0px";
+        deselect[i].style.left = "0px";
+        deselect[i].style.opacity = 0;
+        deselect[i].style.filter = "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+    
+    //only one top item
+    var topItem = $('#' + divId + '.menu > #main');
+    topItem[0].style.opacity = 100;
+    var botItems = $('.menu > #main').not('#' + divId + '.menu > #main');
+    for (var i = 0; i < botItems.length; ++i) {
+        botItems[i].style.opacity = 0;
     }
 }

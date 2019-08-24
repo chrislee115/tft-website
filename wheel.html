@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <script src="script.js" type="text/javascript" async></script>
         <script type="text/javascript" 
-                src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" async></script>
+                src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>
             TFT Simulator
         </title>
@@ -26,97 +26,447 @@
             <center>
                 <span>
                     <input type="checkbox" id="bfMenu" onclick="ItemSelect(this.id)">
-                    <label for="bfMenu"><img src="items/bf.png" /></label>
-                </span>
-                <span>
+                        <label for="bfMenu"><img src="items/bf.png" hspace="20"/></label>
                     <input type="checkbox" id="rodMenu" onclick="ItemSelect(this.id)">
-                    <label for="rodMenu"><img src="items/rod.png" /></label>
-                </span>
-                <span>
+                        <label for="rodMenu"><img src="items/rod.png" hspace="20"/></label>
                     <input type="checkbox" id="bowMenu" onclick="ItemSelect(this.id)">
-                    <label for="bowMenu"><img src="items/bow.png" /></label>
-                </span>
-                <span>
+                        <label for="bowMenu"><img src="items/bow.png" hspace="20"/></label>
                     <input type="checkbox" id="beltMenu" onclick="ItemSelect(this.id)">
-                    <label for="beltMenu"><img src="items/belt.png" /></label>
-                </span>
-                <span>
+                        <label for="beltMenu"><img src="items/belt.png" hspace="20"/></label>
                     <input type="checkbox" id="vestMenu" onclick="ItemSelect(this.id)">
-                    <label for="vestMenu"><img src="items/vest.png" /></label>
-                </span>
-                <span>
+                        <label for="vestMenu"><img src="items/vest.png" hspace="20"/></label>
                     <input type="checkbox" id="cloakMenu" onclick="ItemSelect(this.id)">
-                    <label for="cloakMenu"><img src="items/cloak.png" /></label>
-                </span>
-                <span>
+                        <label for="cloakMenu"><img src="items/cloak.png" hspace="20"/></label>
                     <input type="checkbox" id="tearMenu" onclick="ItemSelect(this.id)">
-                    <label for="tearMenu"><img src="items/tear.png" /></label>
-                </span>
-                <span>
+                        <label for="tearMenu"><img src="items/tear.png" hspace="20"/></label>
                     <input type="checkbox" id="spatMenu" onclick="ItemSelect(this.id)">
-                    <label for="spatMenu"><img src="items/spat.png" /></label>
+                        <label for="spatMenu"><img src="items/spat.png" hspace="20"/></label>
                 </span>
             </center>
         </div>
         
         <div class="menu" id="bfMenu">
-            <!--extra bf for the center-->
             <div class="btn">
-                <img src="items/bf.png">
+                <img src="items/bf.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BF/ie.png" hspace = "10">
             </div>
             <div class="btn">
-                <img src="items/rod.png">
+                <img src="items/rod.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BF/gunblade.png" hspace = "10">
             </div>
             <div class="btn">
-                <img src="items/bow.png">
+                <img src="items/bow.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BF/divine.png" hspace = "10">
             </div>
             <div class="btn">
-                <img src="items/belt.png">
+                <img src="items/belt.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BF/zekes.png" hspace = "10">
             </div>
             <div class="btn">
-                <img src="items/vest.png">
+                <img src="items/BF/ga.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/vest.png" hspace="10">
             </div>
             <div class="btn">
-                <img src="items/cloak.png">
+                <img src="items/BF/bt.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/cloak.png" hspace="10">
             </div>
             <div class="btn">
-            <img src="items/tear.png">
+                <img src="items/BF/shojin.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/tear.png" hspace="10">
             </div>
             <div class="btn">
-                <img src="items/spat.png">
+                <img src="items/BF/ass.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/spat.png" hspace="10">
             </div>
             <div class="btn" id="main">
                 <img src="items/bf.png">
             </div>
         </div>
         <div class="menu" id="rodMenu">
-            <!--extra bf for the center-->
             <div class="btn">
-                <img src="items/bf.png">
+                <img src="items/bf.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/ROD/gunblade.png" hspace = "10">
             </div>
             <div class="btn">
-                <img src="items/rod.png">
+                <img src="items/rod.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/ROD/rabadon.png" hspace = "10">
             </div>
             <div class="btn">
-                <img src="items/bow.png">
+                <img src="items/bow.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/ROD/rageblade.png" hspace = "10">
             </div>
             <div class="btn">
-                <img src="items/belt.png">
+                <img src="items/belt.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/ROD/morello.png" hspace = "10">
             </div>
             <div class="btn">
-                <img src="items/vest.png">
+                <img src="items/ROD/locket.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/vest.png" hspace="10">
             </div>
             <div class="btn">
-                <img src="items/cloak.png">
+                <img src="items/ROD/ionic.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/cloak.png" hspace="10">
             </div>
             <div class="btn">
-            <img src="items/tear.png">
+                <img src="items/ROD/ludens.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/tear.png" hspace="10">
             </div>
             <div class="btn">
-                <img src="items/spat.png">
+                <img src="items/ROD/sorcerer.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/spat.png" hspace="10">
             </div>
             <div class="btn" id="main">
                 <img src="items/rod.png">
+            </div>
+        </div>
+        <div class="menu" id="bowMenu">
+            <div class="btn">
+                <img src="items/bf.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BOW/divine.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/rod.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BOW/rageblade.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/bow.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BOW/rapid.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/belt.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BOW/titanic.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/BOW/pd.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/vest.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/BOW/cursed.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/cloak.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/BOW/shiv.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/tear.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/BOW/blademaster.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/spat.png" hspace="10">
+            </div>
+            <div class="btn" id="main">
+                <img src="items/bow.png">
+            </div>
+        </div>
+        <div class="menu" id="beltMenu">
+            <div class="btn">
+                <img src="items/bf.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BELT/zekes.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/rod.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BELT/morello.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/bow.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BELT/titanic.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/belt.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/BELT/warmog.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/BELT/red.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/vest.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/BELT/zephyr.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/cloak.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/BELT/redemption.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/tear.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/BELT/glacial.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/spat.png" hspace="10">
+            </div>
+            <div class="btn" id="main">
+                <img src="items/belt.png">
+            </div>
+        </div>
+        <div class="menu" id="vestMenu">
+            <div class="btn">
+                <img src="items/bf.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/VEST/ga.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/rod.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/VEST/locket.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/bow.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/VEST/pd.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/belt.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/VEST/red.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/VEST/thorn.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/vest.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/VEST/swordbreaker.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/cloak.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/VEST/fheart.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/tear.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/VEST/knight.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/spat.png" hspace="10">
+            </div>
+            <div class="btn" id="main">
+                <img src="items/vest.png">
+            </div>
+        </div>
+        <div class="menu" id="cloakMenu">
+            <div class="btn">
+                <img src="items/bf.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/CLOAK/bt.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/rod.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/CLOAK/ionic.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/bow.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/CLOAK/cursed.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/belt.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/CLOAK/zephyr.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/CLOAK/swordbreaker.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/vest.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/CLOAK/dragon.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/cloak.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/CLOAK/hush.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/tear.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/CLOAK/runaans.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/spat.png" hspace="10">
+            </div>
+            <div class="btn" id="main">
+                <img src="items/cloak.png">
+            </div>
+        </div>
+        <div class="menu" id="tearMenu">
+            <div class="btn">
+                <img src="items/bf.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/TEAR/shojin.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/rod.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/TEAR/ludens.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/bow.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/TEAR/shiv.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/belt.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/TEAR/redemption.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/TEAR/fheart.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/vest.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/TEAR/swordbreaker.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/cloak.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/TEAR/seraphs.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/tear.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/TEAR/demon.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/spat.png" hspace="10">
+            </div>
+            <div class="btn" id="main">
+                <img src="items/tear.png">
+            </div>
+        </div>
+        <div class="menu" id="spatMenu">
+            <div class="btn">
+                <img src="items/bf.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/SPAT/ass.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/rod.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/SPAT/sorcerer.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/bow.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/SPAT/blademaster.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/belt.png" hspace="10">
+                <img src="items/right.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/SPAT/glacial.png" hspace = "10">
+            </div>
+            <div class="btn">
+                <img src="items/SPAT/knight.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/vest.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/SPAT/runaans.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/cloak.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/SPAT/demon.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/tear.png" hspace="10">
+            </div>
+            <div class="btn">
+                <img src="items/SPAT/hog.png" hspace = "10">
+                <img src="items/left.png" hspace = "10" 
+                     style="width: 60px; height = 60px;">
+                <img src="items/spat.png" hspace="10">
+            </div>
+            <div class="btn" id="main">
+                <img src="items/spat.png">
             </div>
         </div>
     </body>
