@@ -118,7 +118,7 @@ input {position: absolute;}
 .menu {
   margin: 0 auto;
   position: fixed;
-  top: 600px;
+  top: 550px;
   left: 50%;
   margin-left: -25px;
   margin-top: -25px;
@@ -164,4 +164,11 @@ input {position: absolute;}
 .menuBtn {
     position: absolute;
     transition: all 0.3 ease;
+}
+.bench {
+    text-align: center;
+}
+.item {
+    display: inline-block;
+    padding: 5px;
 }

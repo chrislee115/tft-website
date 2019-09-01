@@ -50,6 +50,7 @@ $('input[type="checkbox"]').on('change', function() {
    $(this).siblings('input[type="checkbox"]').prop('checked', false);
 });
 
+
 function ItemSelect(divId) {
     var top = -150;
     var left = -75;
@@ -116,3 +117,29 @@ function ItemSelect(divId) {
         botItems[i].style.opacity = 0;
     }
 }
+//builder buttons
+//is this extraneous?
+$("#bfBtn").click(function () {
+    $(".bench").append('<span class="item" id="bf"><img src="items/bf.png"></span>');
+});
+$("#rodBtn").click(function () {
+    $(".bench").append('<span class="item" id="bf"><img src="items/rod.png"></span>');
+});
+$("#bowBtn").click(function () {
+    $(".bench").append('<span class="item" id="bf"><img src="items/bow.png"></span>');
+});
+$("#beltBtn").click(function () {
+    $(".bench").append('<span class="item" id="bf"><img src="items/belt.png"></span>');
+});
+$("#vestBtn").click(function () {
+    $(".bench").append('<span class="item" id="bf"><img src="items/vest.png"></span>');
+});
+$("#cloakBtn").click(function () {
+    $(".bench").append('<span class="item" id="bf"><img src="items/cloak.png"></span>');
+});
+$("#tearBtn").click(function () {
+    $(".bench").append('<span class="item" id="bf"><img src="items/tear.png"></span>');
+});
+$("#spatBtn").click(function () {
+    $(".bench").append('<span class="item" id="bf"><img src="items/spat.png"></span>');
+});
