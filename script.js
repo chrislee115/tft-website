@@ -169,13 +169,50 @@ function addItem(item) {
     updateCombo();
 }
 //updates all the combinations you can create 
+//0 is bf, 1 is rod, 2 is bow, 3 is belt, 4 is vest, 5 is cloak, 6 is tear, 7 is spat
+function assignNumber(x) {
+    switch (x) {
+        case "bf": 
+            return 0;
+            break;
+        case "rod": 
+            return 1;
+            break;
+        case "bow": 
+            return 2;
+            break;
+        case "belt": 
+            return 3;
+            break;
+        case "vest": 
+            return 4;
+            break;
+        case "cloak": 
+            return 5;
+            break;
+        case "tear": 
+            return 6;
+            break;
+        case "spat": 
+            return 7;
+    }
+}
+//all are false until one of the items is found, if there is a duplicate, 
+//it will update the items differently
+var dupeCheck = [false, false, false, false, false, false, false, false];
 function updateCombo() {
     /*find the duplicates*/
     for (var i = 0; i < bench.length; ++i) {
-        
+        var x = assignNumber(bench[i]);
+        for (var j = i + 1; j < bench.length; ++j) {
+            var y = assignNumber(bench[j]);
+            //adds the item to the bench
+            $("#combos").append('<span class="item"></span>');
+            //looks in the 2d array of all items to retrieve the combination
+            //and then add item to the result box
+            $(".item:last").prepend($('<img>', {src:allItems[x][y]}));
+        }
     }
-    $("#combos").append('<span class="item"></span>');
-    $(".item:last").prepend($('<img>', {src:allItems[0]}));
 }
 function resetBench() {
     bench = [];
