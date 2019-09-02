@@ -23,22 +23,23 @@
         <p><center>Click items to add to your bench to see what you can make!</center></p>
         <div class="item-select">
             <center>
-                <a id="bfBtn"><img src="items/bf.png"></a>
-                <a id="rodBtn"><img src="items/rod.png"></a>
-                <a id="bowBtn"><img src="items/bow.png"></a>
-                <a id="beltBtn"><img src="items/belt.png"></a>
-                <a id="vestBtn"><img src="items/vest.png"></a>
-                <a id="cloakBtn"><img src="items/cloak.png"></a>
-                <a id="tearBtn"><img src="items/tear.png"></a>
-                <a id="spatBtn"><img src="items/spat.png"></a>
-                <button type="button" id="resetBtn" onclick="reset()"
+                <a id="bfBtn" onclick="addItem('bf')"><img src="items/bf.png"></a>
+                <a id="rodBtn" onclick="addItem('rod')"><img src="items/rod.png"></a>
+                <a id="bowBtn" onclick="addItem('bow')"><img src="items/bow.png"></a>
+                <a id="beltBtn" onclick="addItem('belt')"><img src="items/belt.png"></a>
+                <a id="vestBtn" onclick="addItem('vest')"><img src="items/vest.png"></a>
+                <a id="cloakBtn" onclick="addItem('cloak')"><img src="items/cloak.png"></a>
+                <a id="tearBtn" onclick="addItem('tear')"><img src="items/tear.png"></a>
+                <a id="spatBtn" onclick="addItem('spat')"><img src="items/spat.png"></a>
+                <button type="button" id="resetBtn" onclick="resetBench()"
                         style="position: relative; bottom: 5.6px;">Reset</button>
             </center>
         </div>  
         <p><center>Your Bench:</center></p>
-        <div class="bench">
-            <center></center>
+        <div class="itemContainer" id="bench">
         </div>
         <p><center>What you can make: </center></p>
+        <div class="itemContainer" id="combos">
+        </div>
     </body>
 </html>

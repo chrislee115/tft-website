@@ -93,11 +93,6 @@ input {
     position: relative;
     top: 250px;
 }
-.bench {
-    border: 2px solid gray;
-    padding: 50px;
-    margin: 20px;
-}
 body {overflow: hidden; 
     overflow-y: auto;
     background: #212121}
@@ -165,7 +160,11 @@ input {position: absolute;}
     position: absolute;
     transition: all 0.3 ease;
 }
-.bench {
+.itemContainer {
+/*    remove the border later when you have nothing*/
+    border: 2px solid gray;
+    padding: 10px;
+    height: auto;
     text-align: center;
 }
 .item {

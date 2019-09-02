@@ -120,26 +120,65 @@ function ItemSelect(divId) {
 //builder buttons
 //is this extraneous?
 $("#bfBtn").click(function () {
-    $(".bench").append('<span class="item" id="bf"><img src="items/bf.png"></span>');
+    $("#bench").append('<span class="item" id="bf"><img src="items/bf.png"></span>');
 });
 $("#rodBtn").click(function () {
-    $(".bench").append('<span class="item" id="bf"><img src="items/rod.png"></span>');
+    $("#bench").append('<span class="item" id="bf"><img src="items/rod.png"></span>');
 });
 $("#bowBtn").click(function () {
-    $(".bench").append('<span class="item" id="bf"><img src="items/bow.png"></span>');
+    $("#bench").append('<span class="item" id="bf"><img src="items/bow.png"></span>');
 });
 $("#beltBtn").click(function () {
-    $(".bench").append('<span class="item" id="bf"><img src="items/belt.png"></span>');
+    $("#bench").append('<span class="item" id="bf"><img src="items/belt.png"></span>');
 });
 $("#vestBtn").click(function () {
-    $(".bench").append('<span class="item" id="bf"><img src="items/vest.png"></span>');
+    $("#bench").append('<span class="item" id="bf"><img src="items/vest.png"></span>');
 });
 $("#cloakBtn").click(function () {
-    $(".bench").append('<span class="item" id="bf"><img src="items/cloak.png"></span>');
+    $("#bench").append('<span class="item" id="bf"><img src="items/cloak.png"></span>');
 });
 $("#tearBtn").click(function () {
-    $(".bench").append('<span class="item" id="bf"><img src="items/tear.png"></span>');
+    $("#bench").append('<span class="item" id="bf"><img src="items/tear.png"></span>');
 });
 $("#spatBtn").click(function () {
-    $(".bench").append('<span class="item" id="bf"><img src="items/spat.png"></span>');
+    $("#bench").append('<span class="item" id="bf"><img src="items/spat.png"></span>');
 });
+/*can be used in the wheel as well, tho is it worth it?*/
+var allItems = [
+    /*bf*/
+    ["items/BF/ie.png", "items/BF/gunblade.png", "items/BF/divine.png", "items/BF/zekes.png", "items/BF/ga.png", "items/BF/bt.png", "items/BF/shojin.png", "items/BF/ass.png"],
+    /*rod*/
+    ["items/ROD/gunblade.png", "items/ROD/rabadon.png", "items/ROD/rageblade.png", "items/ROD/morello.png", "items/ROD/locket.png", "items/ROD/ionic.png", "items/ROD/ludens.png", "items/ROD/sorcerer.png"], 
+    /*bow*/
+    ["items/BOW/gunblade.png", "items/BOW/rageblade.png", "items/BOW/rapid.png", "items/BOW/titanic.png", "items/BOW/pd.png", "items/BOW/cursed.png", "items/BOW/shiv.png", "items/BOW/blademaster.png"], 
+    /*belt*/
+    ["items/BELT/gunblade.png", "items/BELT/morello.png", "items/BELT/titanic.png", "items/BELT/warmog.png", "items/BELT/red.png", "items/BELT/zephyr.png", "items/BELT/redemption.png", "items/BELT/glacial.png"], 
+    /*vest*/
+    ["items/VEST/gunblade.png", "items/VEST/locket.png", "items/VEST/pd.png", "items/VEST/red.png", "items/VEST/thorn.png", "items/VEST/swordbreaker.png", "items/VEST/fheart.png", "items/VEST/knight.png"], 
+    /*cloak*/
+    ["items/CLOAK/gunblade.png", "items/CLOAK/ionic.png", "items/CLOAK/cursed.png", "items/CLOAK/zephyr.png", "items/CLOAK/swordbreaker.png", "items/CLOAK/dragon.png", "items/CLOAK/hush.png", "items/CLOAK/runaans.png"], 
+    /*tear*/
+    ["items/TEAR/gunblade.png", "items/TEAR/ludens.png", "items/TEAR/shiv.png", "items/TEAR/redemption.png", "items/TEAR/fheart.png", "items/TEAR/hush.png", "items/TEAR/seraphs.png", "items/TEAR/demon.png"], 
+    /*spat*/
+    /*change hog to fon lol*/
+    ["items/SPAT/gunblade.png", "items/SPAT/sorcerer.png", "items/SPAT/blademaster.png", "items/SPAT/glacial.png", "items/SPAT/knight.png", "items/SPAT/runaans.png", "items/SPAT/demon.png", "items/SPAT/hog.png"]
+];
+var bench = [];
+function addItem(item) {
+    bench.push(item);
+    updateCombo();
+}
+//updates all the combinations you can create 
+function updateCombo() {
+    /*find the duplicates*/
+    for (var i = 0; i < bench.length; ++i) {
+        
+    }
+    $("#combos").append('<span class="item"></span>');
+    $(".item:last").prepend($('<img>', {src:allItems[0]}));
+}
+function resetBench() {
+    bench = [];
+    $("#bench span").empty();
+    $("#combos span").empty();
+}
