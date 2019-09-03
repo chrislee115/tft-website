@@ -40,6 +40,9 @@ function dragDrop() {
 //item functions
 $(document).ready(function () {
 $('input[type="checkbox"]').on('click', function(e) {
+    $("#connectLines").css( {
+        "display":"block"
+    });
     var checkbox = $(this);
     if (checkbox.is(":checked")) {
         e.preventDefault();
