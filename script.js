@@ -38,19 +38,20 @@ function dragDrop() {
     this.append(champs);
 }
 //item functions
+$(document).ready(function () {
 $('input[type="checkbox"]').on('click', function(e) {
     var checkbox = $(this);
     if (checkbox.is(":checked")) {
         e.preventDefault();
         return false;
     }
-})
+});
 
 $('input[type="checkbox"]').on('change', function() {
    $(this).siblings('input[type="checkbox"]').prop('checked', false);
 });
 
-
+});
 function ItemSelect(divId) {
     var top = -150;
     var left = -75;
@@ -197,21 +198,30 @@ function assignNumber(x) {
             return 7;
     }
 }
-//all are false until one of the items is found, if there is a duplicate, 
-//it will update the items differently
-var dupeCheck = [false, false, false, false, false, false, false, false];
 function updateCombo() {
     /*find the duplicates*/
-    for (var i = 0; i < bench.length; ++i) {
+//all are false until one of the items is found, if there is a duplicate, 
+//it will update the items differently
+    var dupeCheckX = [false, false, false, false, false, false, false, false];
+    $("#combos span").empty();
+    for (var i = 0; i < bench.length - 1; ++i) {
         var x = assignNumber(bench[i]);
-        for (var j = i + 1; j < bench.length; ++j) {
-            var y = assignNumber(bench[j]);
-            //adds the item to the bench
-            $("#combos").append('<span class="item"></span>');
-            //looks in the 2d array of all items to retrieve the combination
-            //and then add item to the result box
-            $(".item:last").prepend($('<img>', {src:allItems[x][y]}));
+        if (!dupeCheckX[x]) {
+        var dupeCheckY = dupeCheckX; 
+            for (var j = i + 1; j < bench.length; ++j) {
+                var y = assignNumber(bench[j]);
+                if (dupeCheckY[y]) { 
+                    continue;
+                }
+                //adds the item to the bench
+                $("#combos").append('<span class="item"></span>');
+                //looks in the 2d array of all items to retrieve the combination
+                //and then pushes it to the result box
+                $(".item:last").prepend($('<img>', {src:allItems[x][y]}));
+                dupeCheckY[y] = true;
+            }
         }
+        dupeCheckX[x] = true;
     }
 }
 function resetBench() {
