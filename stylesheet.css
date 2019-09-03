@@ -119,9 +119,11 @@ input {position: absolute;}
   margin-top: -25px;
 }
 #connectLines {
+    margin: 0 auto;
     position: fixed;
     top: 410px;
-    left: 33.4%;
+    left: 50%;
+    margin-left: -153px;
     display: none;
 }
 .btn {
@@ -147,7 +149,7 @@ input {position: absolute;}
 }
 #main.btn {
     border-style: solid;
-    border-color: rebeccapurple;
+    border-color: gold;
     position: relative;
     z-index: -1;
     opacity: 0;

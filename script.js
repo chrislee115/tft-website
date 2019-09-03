@@ -211,11 +211,12 @@ function updateCombo() {
     $("[id=comboItem]").css({
         "padding":"0px"
     });
+    //TODO: rewrite this lol
     $("#combos span").empty();
     for (var i = 0; i < bench.length - 1; ++i) {
         var x = assignNumber(bench[i]);
         if (!dupeCheckX[x]) {
-        var dupeCheckY = dupeCheckX; 
+            var dupeCheckY = dupeCheckX; 
             for (var j = i + 1; j < bench.length; ++j) {
                 var y = assignNumber(bench[j]);
                 if (dupeCheckY[y]) { 
@@ -236,7 +237,10 @@ function resetBench() {
     bench = [];
     $(".item").css({
         "padding":"0px"
-    })
+    });
+    $("[id=comboItem]").css({
+        "padding":"0px"
+    });
     $("#bench span").empty();
     $("#combos span").empty();
 }
