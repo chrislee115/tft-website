@@ -124,25 +124,25 @@ $("#bfBtn").click(function () {
     $("#bench").append('<span class="item" id="bf"><img src="items/bf.png"></span>');
 });
 $("#rodBtn").click(function () {
-    $("#bench").append('<span class="item" id="bf"><img src="items/rod.png"></span>');
+    $("#bench").append('<span class="item" id="rod"><img src="items/rod.png"></span>');
 });
 $("#bowBtn").click(function () {
-    $("#bench").append('<span class="item" id="bf"><img src="items/bow.png"></span>');
+    $("#bench").append('<span class="item" id="bow"><img src="items/bow.png"></span>');
 });
 $("#beltBtn").click(function () {
-    $("#bench").append('<span class="item" id="bf"><img src="items/belt.png"></span>');
+    $("#bench").append('<span class="item" id="belt"><img src="items/belt.png"></span>');
 });
 $("#vestBtn").click(function () {
     $("#bench").append('<span class="item" id="bf"><img src="items/vest.png"></span>');
 });
 $("#cloakBtn").click(function () {
-    $("#bench").append('<span class="item" id="bf"><img src="items/cloak.png"></span>');
+    $("#bench").append('<span class="item" id="cloak"><img src="items/cloak.png"></span>');
 });
 $("#tearBtn").click(function () {
-    $("#bench").append('<span class="item" id="bf"><img src="items/tear.png"></span>');
+    $("#bench").append('<span class="item" id="tear"><img src="items/tear.png"></span>');
 });
 $("#spatBtn").click(function () {
-    $("#bench").append('<span class="item" id="bf"><img src="items/spat.png"></span>');
+    $("#bench").append('<span class="item" id="spat"><img src="items/spat.png"></span>');
 });
 /*can be used in the wheel as well, tho is it worth it?*/
 var allItems = [
@@ -155,7 +155,7 @@ var allItems = [
     /*belt*/
     ["items/BELT/gunblade.png", "items/BELT/morello.png", "items/BELT/titanic.png", "items/BELT/warmog.png", "items/BELT/red.png", "items/BELT/zephyr.png", "items/BELT/redemption.png", "items/BELT/glacial.png"], 
     /*vest*/
-    ["items/VEST/gunblade.png", "items/VEST/locket.png", "items/VEST/pd.png", "items/VEST/red.png", "items/VEST/thorn.png", "items/VEST/swordbreaker.png", "items/VEST/fheart.png", "items/VEST/knight.png"], 
+    ["items/VEST/ga.png", "items/VEST/locket.png", "items/VEST/pd.png", "items/VEST/red.png", "items/VEST/thorn.png", "items/VEST/swordbreaker.png", "items/VEST/fheart.png", "items/VEST/knight.png"], 
     /*cloak*/
     ["items/CLOAK/gunblade.png", "items/CLOAK/ionic.png", "items/CLOAK/cursed.png", "items/CLOAK/zephyr.png", "items/CLOAK/swordbreaker.png", "items/CLOAK/dragon.png", "items/CLOAK/hush.png", "items/CLOAK/runaans.png"], 
     /*tear*/
@@ -202,7 +202,12 @@ function updateCombo() {
     /*find the duplicates*/
 //all are false until one of the items is found, if there is a duplicate, 
 //it will update the items differently
+    //need two dupe checks to avoid cases where it repeats
     var dupeCheckX = [false, false, false, false, false, false, false, false];
+    //clear the results box to update
+    $("[id=comboItem]").css({
+        "padding":"0px"
+    });
     $("#combos span").empty();
     for (var i = 0; i < bench.length - 1; ++i) {
         var x = assignNumber(bench[i]);
@@ -214,7 +219,7 @@ function updateCombo() {
                     continue;
                 }
                 //adds the item to the bench
-                $("#combos").append('<span class="item"></span>');
+                $("#combos").append('<span class="item" id="comboItem"></span>');
                 //looks in the 2d array of all items to retrieve the combination
                 //and then pushes it to the result box
                 $(".item:last").prepend($('<img>', {src:allItems[x][y]}));
@@ -226,6 +231,9 @@ function updateCombo() {
 }
 function resetBench() {
     bench = [];
+    $(".item").css({
+        "padding":"0px"
+    })
     $("#bench span").empty();
     $("#combos span").empty();
 }
