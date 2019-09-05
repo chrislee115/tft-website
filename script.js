@@ -148,24 +148,46 @@ $("#spatBtn").click(function () {
     $("#bench").append('<span class="item" id="spat"><img src="items/spat.png"></span>');
 });
 /*can be used in the wheel as well, tho is it worth it?*/
+//this makes it easier to look for duplicates
+class Itm {
+    constructor(path) {
+        this.path = path;
+        this.found = false;
+    }
+    setExistence(existence) {
+        this.found = existence;
+    }
+    isFound() {
+        return this.found;
+    }
+}
+//works like a memo
 var allItems = [
     /*bf*/
-    ["items/BF/ie.png", "items/BF/gunblade.png", "items/BF/divine.png", "items/BF/zekes.png", "items/BF/ga.png", "items/BF/bt.png", "items/BF/shojin.png", "items/BF/ass.png"],
+    [new Itm("items/BF/ie.png"), new Itm("items/BF/gunblade.png"), new Itm("items/BF/divine.png"), new Itm("items/BF/zekes.png"), 
+     new Itm("items/BF/ga.png"), new Itm("items/BF/bt.png"), new Itm("items/BF/shojin.png"), new Itm("items/BF/ass.png")],
     /*rod*/
-    ["items/ROD/gunblade.png", "items/ROD/rabadon.png", "items/ROD/rageblade.png", "items/ROD/morello.png", "items/ROD/locket.png", "items/ROD/ionic.png", "items/ROD/ludens.png", "items/ROD/sorcerer.png"], 
+    [new Itm("items/ROD/gunblade.png"), new Itm("items/ROD/rabadon.png"), new Itm("items/ROD/rageblade.png"), new Itm("items/ROD/morello.png"), 
+    new Itm("items/ROD/locket.png"), new Itm("items/ROD/ionic.png"), new Itm("items/ROD/ludens.png"), new Itm("items/ROD/sorcerer.png")], 
     /*bow*/
-    ["items/BOW/gunblade.png", "items/BOW/rageblade.png", "items/BOW/rapid.png", "items/BOW/titanic.png", "items/BOW/pd.png", "items/BOW/cursed.png", "items/BOW/shiv.png", "items/BOW/blademaster.png"], 
+    [new Itm("items/BOW/gunblade.png"), new Itm("items/BOW/rageblade.png"), new Itm("items/BOW/rapid.png"), new Itm("items/BOW/titanic.png"), 
+    new Itm("items/BOW/pd.png"), new Itm("items/BOW/cursed.png"), new Itm("items/BOW/shiv.png"), new Itm("items/BOW/blademaster.png")], 
     /*belt*/
-    ["items/BELT/gunblade.png", "items/BELT/morello.png", "items/BELT/titanic.png", "items/BELT/warmog.png", "items/BELT/red.png", "items/BELT/zephyr.png", "items/BELT/redemption.png", "items/BELT/glacial.png"], 
+    [new Itm("items/BELT/gunblade.png"), new Itm("items/BELT/morello.png"), new Itm("items/BELT/titanic.png"), new Itm("items/BELT/warmog.png"), 
+    new Itm("items/BELT/red.png"), new Itm("items/BELT/zephyr.png"), new Itm("items/BELT/redemption.png"), new Itm("items/BELT/glacial.png")], 
     /*vest*/
-    ["items/VEST/ga.png", "items/VEST/locket.png", "items/VEST/pd.png", "items/VEST/red.png", "items/VEST/thorn.png", "items/VEST/swordbreaker.png", "items/VEST/fheart.png", "items/VEST/knight.png"], 
+    [new Itm("items/VEST/ga.png"), new Itm("items/VEST/locket.png"), new Itm("items/VEST/pd.png"), new Itm("items/VEST/red.png"), 
+    new Itm("items/VEST/thorn.png"), new Itm("items/VEST/swordbreaker.png"), new Itm("items/VEST/fheart.png"), new Itm("items/VEST/knight.png)"], 
     /*cloak*/
-    ["items/CLOAK/gunblade.png", "items/CLOAK/ionic.png", "items/CLOAK/cursed.png", "items/CLOAK/zephyr.png", "items/CLOAK/swordbreaker.png", "items/CLOAK/dragon.png", "items/CLOAK/hush.png", "items/CLOAK/runaans.png"], 
+    [new Itm("items/CLOAK/gunblade.png"), new Itm("items/CLOAK/ionic.png"), new Itm("items/CLOAK/cursed.png"), new Itm("items/CLOAK/zephyr.png"), 
+    new Itm("items/CLOAK/swordbreaker.png"), new Itm("items/CLOAK/dragon.png"), new Itm("items/CLOAK/hush.png"), new Itm("items/CLOAK/runaans.png")], 
     /*tear*/
-    ["items/TEAR/gunblade.png", "items/TEAR/ludens.png", "items/TEAR/shiv.png", "items/TEAR/redemption.png", "items/TEAR/fheart.png", "items/TEAR/hush.png", "items/TEAR/seraphs.png", "items/TEAR/demon.png"], 
+    [new Itm("items/TEAR/gunblade.png"), new Itm("items/TEAR/ludens.png"), new Itm("items/TEAR/shiv.png"), new Itm("items/TEAR/redemption.png"), 
+    new Itm("items/TEAR/fheart.png"), new Itm("items/TEAR/hush.png"), new Itm("items/TEAR/seraphs.png"), new Itm("items/TEAR/demon.png")], 
     /*spat*/
     /*change hog to fon lol*/
-    ["items/SPAT/gunblade.png", "items/SPAT/sorcerer.png", "items/SPAT/blademaster.png", "items/SPAT/glacial.png", "items/SPAT/knight.png", "items/SPAT/runaans.png", "items/SPAT/demon.png", "items/SPAT/hog.png"]
+    [new Itm("items/SPAT/gunblade.png"), new Itm("items/SPAT/sorcerer.png"), new Itm("items/SPAT/blademaster.png"), new Itm("items/SPAT/glacial.png"), 
+    new Itm("items/SPAT/knight.png"), new Itm("items/SPAT/runaans.png"), new Itm("items/SPAT/demon.png"), new Itm("items/SPAT/hog.png")]
 ];
 var bench = [];
 function addItem(item) {
@@ -201,36 +223,37 @@ function assignNumber(x) {
             return 7;
     }
 }
-function updateCombo() {
-    /*find the duplicates*/
-//all are false until one of the items is found, if there is a duplicate, 
-//it will update the items differently
-    //need two dupe checks to avoid cases where it repeats
-    var dupeCheckX = [false, false, false, false, false, false, false, false];
-    //clear the results box to update
+function resetItems() {
+    //there are 8 x 8 items in the matrix
+    //how else can i reset all the items?
+    for (var i = 0; i < 8; ++i) {
+        for (var j = 0; j < 8; ++j) {
+            allItems[i][j].setExistence(false);
+        }
+    }
+    //the padding doesnt automatically set to 0 when the spam element is removed
     $("[id=comboItem]").css({
         "padding":"0px"
     });
-    //TODO: rewrite this lol
-    $("#combos span").empty();
-    for (var i = 0; i < bench.length - 1; ++i) {
-        var x = assignNumber(bench[i]);
-        if (!dupeCheckX[x]) {
-            var dupeCheckY = dupeCheckX; 
-            for (var j = i + 1; j < bench.length; ++j) {
-                var y = assignNumber(bench[j]);
-                if (dupeCheckY[y]) { 
-                    continue;
-                }
-                //adds the item to the bench
-                $("#combos").append('<span class="item" id="comboItem"></span>');
-                //looks in the 2d array of all items to retrieve the combination
-                //and then pushes it to the result box
-                $(".item:last").prepend($('<img>', {src:allItems[x][y]}));
-                dupeCheckY[y] = true;
-            }
+}
+function updateCombo() {
+    //x is the last element that was put into the bench
+    var x = assignNumber(bench[bench.length -1]);
+    //compares the last element to all other existing items
+    for (var i = 0; i < bench.length - 2; ++i) {
+        var y = assignNumber(bench[i]);
+        if (allItems[x][y].isFound()) { 
+            continue;
         }
-        dupeCheckX[x] = true;
+        //adds the item to the bench
+        $("#combos").append('<span class="item" id="comboItem"></span>');
+        //looks in the 2d array of all items to retrieve the combination
+        //and then pushes it to the result box
+        $(".item:last").prepend($('<img>', {src:allItems[x][y]}));
+        //saves the item in the memo
+        //need to switch x and y bc the item can exist in two spots
+        allItems[x][y].setExistence(true);
+        allItems[y][x].setExistence(true);
     }
 }
 function resetBench() {
