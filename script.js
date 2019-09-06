@@ -154,11 +154,17 @@ class Itm {
         this.path = path;
         this.found = false;
     }
-    setExistence(existence) {
-        this.found = existence;
+    reset() {
+        this.found = false;
     }
     isFound() {
         return this.found;
+    }
+    getPath() {
+        return this.path;
+    }
+    foundIt() {
+        this.found = true;
     }
 }
 //works like a memo
@@ -177,7 +183,7 @@ var allItems = [
     new Itm("items/BELT/red.png"), new Itm("items/BELT/zephyr.png"), new Itm("items/BELT/redemption.png"), new Itm("items/BELT/glacial.png")], 
     /*vest*/
     [new Itm("items/VEST/ga.png"), new Itm("items/VEST/locket.png"), new Itm("items/VEST/pd.png"), new Itm("items/VEST/red.png"), 
-    new Itm("items/VEST/thorn.png"), new Itm("items/VEST/swordbreaker.png"), new Itm("items/VEST/fheart.png"), new Itm("items/VEST/knight.png)"], 
+    new Itm("items/VEST/thorn.png"), new Itm("items/VEST/swordbreaker.png"), new Itm("items/VEST/fheart.png"), new Itm("items/VEST/knight.png")], 
     /*cloak*/
     [new Itm("items/CLOAK/gunblade.png"), new Itm("items/CLOAK/ionic.png"), new Itm("items/CLOAK/cursed.png"), new Itm("items/CLOAK/zephyr.png"), 
     new Itm("items/CLOAK/swordbreaker.png"), new Itm("items/CLOAK/dragon.png"), new Itm("items/CLOAK/hush.png"), new Itm("items/CLOAK/runaans.png")], 
@@ -228,19 +234,15 @@ function resetItems() {
     //how else can i reset all the items?
     for (var i = 0; i < 8; ++i) {
         for (var j = 0; j < 8; ++j) {
-            allItems[i][j].setExistence(false);
+            allItems[i][j].reset();
         }
     }
-    //the padding doesnt automatically set to 0 when the spam element is removed
-    $("[id=comboItem]").css({
-        "padding":"0px"
-    });
 }
 function updateCombo() {
     //x is the last element that was put into the bench
     var x = assignNumber(bench[bench.length -1]);
     //compares the last element to all other existing items
-    for (var i = 0; i < bench.length - 2; ++i) {
+    for (var i = 0; i < bench.length - 1; ++i) {
         var y = assignNumber(bench[i]);
         if (allItems[x][y].isFound()) { 
             continue;
@@ -249,21 +251,24 @@ function updateCombo() {
         $("#combos").append('<span class="item" id="comboItem"></span>');
         //looks in the 2d array of all items to retrieve the combination
         //and then pushes it to the result box
-        $(".item:last").prepend($('<img>', {src:allItems[x][y]}));
+        $(".item:last").prepend($('<img>', {src:allItems[x][y].getPath()}));
         //saves the item in the memo
         //need to switch x and y bc the item can exist in two spots
-        allItems[x][y].setExistence(true);
-        allItems[y][x].setExistence(true);
+        allItems[x][y].foundIt();
+        allItems[y][x].foundIt();
     }
 }
 function resetBench() {
+    resetItems();
     bench = [];
+    //the paddings don't get removed when the spans are cleared
     $(".item").css({
         "padding":"0px"
     });
     $("[id=comboItem]").css({
         "padding":"0px"
     });
+    //clears all the span elements under the respective parent classes
     $("#bench span").empty();
     $("#combos span").empty();
 }
