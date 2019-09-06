@@ -1,3 +1,4 @@
+// SIMULATOR FUNCTIONS // 
 //going to have more champs later so prob queryselectorall
 const champs = document.querySelector(".champ");
 const hexes = document.querySelectorAll(".hex");
@@ -37,6 +38,7 @@ function dragDrop() {
     this.className = 'hex';
     this.append(champs);
 }
+// WHEEL FUNCTIONS // 
 //item functions
 $(document).ready(function () {
 $('input[type="checkbox"]').on('click', function(e) {
@@ -121,6 +123,7 @@ function ItemSelect(divId) {
         botItems[i].style.opacity = 0;
     }
 }
+// BUILDER FUNCTIONS //
 //builder buttons
 //is this extraneous?
 $("#bfBtn").click(function () {
