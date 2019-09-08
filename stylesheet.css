@@ -69,8 +69,6 @@ body {
     left: 75px;
 }
 .champ {
-    background-image: url('champs/aatrox.png');
-    background-size: 82px 93px;
     position: relative;
     top: 3px;
     width: 82px;

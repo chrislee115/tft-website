@@ -19,7 +19,11 @@ if (hexes) {
 //drag functions
 function dragStart() {
     this.className += ' hold';
-    setTimeout(() => (this.className = 'invisible'), 0);
+    //makes the original spot invisible, but not sure if necessary?
+    //TODO: 
+    //if the orig spot is from the champ pool then dont invis
+    //if just moving around in the map, then invis
+    //setTimeout(() => (this.className = 'invisible'), 0);
 }
 function dragEnd() {
     this.className = 'champ';
@@ -37,6 +41,13 @@ function dragLeave() {
 function dragDrop() {
     this.className = 'hex';
     this.append(champs);
+}
+
+function updateTraits() {
+    var currentChamps = document.querySelectorAll('.hex .champ');
+    for (const champ of currentChamps) {
+        
+    }
 }
 // WHEEL FUNCTIONS // 
 //item functions
