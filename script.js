@@ -164,9 +164,12 @@ $("#spatBtn").click(function () {
 /*can be used in the wheel as well, tho is it worth it?*/
 //this makes it easier to look for duplicates
 class Itm {
-    constructor(path) {
+    constructor(path, name, desc) {
         this.path = path;
         this.found = false;
+        //i suppose i could use a function here as well but idk
+        this.name = name;
+        this.desc = desc;
     }
     reset() {
         this.found = false;
@@ -180,20 +183,28 @@ class Itm {
     foundIt() {
         this.found = true;
     }
+    getDesc() {
+        return toSpan(this.name, this.desc);
+    }
 }
+//bf rod bow belt vest cloak tear spat 
+//0  1   2   3    4    5     6    7
 //works like a memo
+//maybe find a way to make this a triangular matrix or something
 var allItems = [
     /*bf*/
-    [new Itm("items/BF/ie.png"), new Itm("items/BF/gunblade.png"), new Itm("items/BF/divine.png"), new Itm("items/BF/zekes.png"), 
-     new Itm("items/BF/ga.png"), new Itm("items/BF/bt.png"), new Itm("items/BF/shojin.png"), new Itm("items/BF/ass.png")],
+    [new Itm("items/BF/ie.png", "Infinity Edge", "Critical Strikes deal +200% damage"), new Itm("items/BF/gunblade.png", "Hextech Gunblade", "Heal for 25% of all damage dealt"), 
+     new Itm("items/BF/divine.png", "Sword of the Divine", "Every 1s gain a 7% chance to gain 100% Critical Strike"), new Itm("items/BF/zekes.png", "Zeke's Herald", "On start of combat, allies 2 spaces to the left and right gain +15% Attack Speed"), 
+     new Itm("items/BF/ga.png", "Guardian Angel", "Wearer revives with 500 Health after a 2 sec delay"), new Itm("items/BF/bt.png", "Bloodthirster", "Attacks heal for 40% of damage"), 
+     new Itm("items/BF/shojin.png", "Spear of Shojin", "After casting, gain 15% of max mana per attack"), new Itm("items/BF/ass.png", "Youmuu's Ghostblade", "Wearer is also an Assassin")],
     /*rod*/
-    [new Itm("items/ROD/gunblade.png"), new Itm("items/ROD/rabadon.png"), new Itm("items/ROD/rageblade.png"), new Itm("items/ROD/morello.png"), 
+    [new Itm("items/ROD/gunblade.png", "Hextech Gunblade", "Heal for 25% of all damage dealt"), new Itm("items/ROD/rabadon.png"), new Itm("items/ROD/rageblade.png"), new Itm("items/ROD/morello.png"), 
     new Itm("items/ROD/locket.png"), new Itm("items/ROD/ionic.png"), new Itm("items/ROD/ludens.png"), new Itm("items/ROD/sorcerer.png")], 
     /*bow*/
-    [new Itm("items/BOW/gunblade.png"), new Itm("items/BOW/rageblade.png"), new Itm("items/BOW/rapid.png"), new Itm("items/BOW/titanic.png"), 
+    [new Itm("items/BOW/divine.png", "Sword of the Divine", "Every 1s gain a 7% chance to gain 100% Critical Strike"), new Itm("items/BOW/rageblade.png"), new Itm("items/BOW/rapid.png"), new Itm("items/BOW/titanic.png"), 
     new Itm("items/BOW/pd.png"), new Itm("items/BOW/cursed.png"), new Itm("items/BOW/shiv.png"), new Itm("items/BOW/blademaster.png")], 
     /*belt*/
-    [new Itm("items/BELT/gunblade.png"), new Itm("items/BELT/morello.png"), new Itm("items/BELT/titanic.png"), new Itm("items/BELT/warmog.png"), 
+    [new Itm("items/BELT/zekes.png", "Zeke's Herald", "On start of combat, allies 2 spaces to the left and right gain +15% Attack Speed"), new Itm("items/BELT/morello.png"), new Itm("items/BELT/titanic.png"), new Itm("items/BELT/warmog.png"), 
     new Itm("items/BELT/red.png"), new Itm("items/BELT/zephyr.png"), new Itm("items/BELT/redemption.png"), new Itm("items/BELT/glacial.png")], 
     /*vest*/
     [new Itm("items/VEST/ga.png"), new Itm("items/VEST/locket.png"), new Itm("items/VEST/pd.png"), new Itm("items/VEST/red.png"), 
@@ -252,6 +263,10 @@ function resetItems() {
         }
     }
 }
+//the descriptions need to have the full html tags in order for the array to work
+function toSpan (name, desc) {
+    return "<span class=\"explanation\"><p id=\"expText\"><u>" + name +  "</u><br/>"+ desc + "</p></span>";
+}
 function updateCombo() {
     //x is the last element that was put into the bench
     var x = assignNumber(bench[bench.length -1]);
@@ -266,6 +281,12 @@ function updateCombo() {
         //looks in the 2d array of all items to retrieve the combination
         //and then pushes it to the result box
         $(".item:last").prepend($('<img>', {src:allItems[x][y].getPath()}));
+        
+        //for explanation
+        //I suppose this can go into one line but would it be worth?
+        $("#explain").append(allItems[x][y].getDesc());
+        $(".explanation:last").prepend($('<img>', {src:allItems[x][y].getPath()}));
+        
         //saves the item in the memo
         //need to switch x and y bc the item can exist in two spots
         allItems[x][y].foundIt();
@@ -285,4 +306,5 @@ function resetBench() {
     //clears all the span elements under the respective parent classes
     $("#bench span").empty();
     $("#combos span").empty();
+    $("#explain span").empty();
 }

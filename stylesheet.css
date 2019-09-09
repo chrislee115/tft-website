@@ -178,3 +178,12 @@ input {position: absolute;}
     display: inline-block;
     padding: 5px;
 }
+#expText {
+    font-size: 20px;
+    position: relative;
+    bottom: 25px;
+    line-height: 23px;
+}
+.explanation { 
+    display: inline-block;
+}
