@@ -186,4 +186,5 @@ input {position: absolute;}
 }
 .explanation { 
     display: inline-block;
+    padding: 10px;
 }

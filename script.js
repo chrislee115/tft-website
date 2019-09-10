@@ -183,9 +183,15 @@ class Itm {
     foundIt() {
         this.found = true;
     }
-    getDesc() {
-        return toSpan(this.name, this.desc);
+    getDesc(itm1, itm2) {
+        return toSpan(this.name, this.desc, itm1, itm2);
     }
+}
+//the descriptions need to have the full html tags in order for the array to work
+function toSpan (name, desc, itm1, itm2) {
+    return "<span class=\"explanation\"><p id=\"expText\"><u>" + name +  "</u><br/>"
+        + itm1 + "+" + itm2 + "<br/>" 
+        + desc + "</p></span>";
 }
 //bf rod bow belt vest cloak tear spat 
 //0  1   2   3    4    5     6    7
@@ -193,32 +199,78 @@ class Itm {
 //maybe find a way to make this a triangular matrix or something
 var allItems = [
     /*bf*/
-    [new Itm("items/BF/ie.png", "Infinity Edge", "Critical Strikes deal +200% damage"), new Itm("items/BF/gunblade.png", "Hextech Gunblade", "Heal for 25% of all damage dealt"), 
-     new Itm("items/BF/divine.png", "Sword of the Divine", "Every 1s gain a 7% chance to gain 100% Critical Strike"), new Itm("items/BF/zekes.png", "Zeke's Herald", "On start of combat, allies 2 spaces to the left and right gain +15% Attack Speed"), 
-     new Itm("items/BF/ga.png", "Guardian Angel", "Wearer revives with 500 Health after a 2 sec delay"), new Itm("items/BF/bt.png", "Bloodthirster", "Attacks heal for 40% of damage"), 
-     new Itm("items/BF/shojin.png", "Spear of Shojin", "After casting, gain 15% of max mana per attack"), new Itm("items/BF/ass.png", "Youmuu's Ghostblade", "Wearer is also an Assassin")],
+    [new Itm("items/BF/ie.png", "Infinity Edge", "Critical Strikes deal +200% damage"), 
+     new Itm("items/BF/gunblade.png", "Hextech Gunblade", "Heal for 25% of all damage dealt"), 
+     new Itm("items/BF/divine.png", "Sword of the Divine", "Every 1s gain a 7% chance to gain 100% Critical Strike"), 
+     new Itm("items/BF/zekes.png", "Zeke's Herald", "On start of combat, allies 2 spaces to the left and right gain +15% Attack Speed"), 
+     new Itm("items/BF/ga.png", "Guardian Angel", "Wearer revives with 500 Health after a 2 sec delay"), 
+     new Itm("items/BF/bt.png", "Bloodthirster", "Attacks heal for 40% of damage"), 
+     new Itm("items/BF/shojin.png", "Spear of Shojin", "After casting, gain 15% of max mana per attack"), 
+     new Itm("items/BF/ass.png", "Youmuu's Ghostblade", "Wearer is also an Assassin")],
     /*rod*/
-    [new Itm("items/ROD/gunblade.png", "Hextech Gunblade", "Heal for 25% of all damage dealt"), new Itm("items/ROD/rabadon.png"), new Itm("items/ROD/rageblade.png"), new Itm("items/ROD/morello.png"), 
-    new Itm("items/ROD/locket.png"), new Itm("items/ROD/ionic.png"), new Itm("items/ROD/ludens.png"), new Itm("items/ROD/sorcerer.png")], 
+    [new Itm("items/ROD/gunblade.png", "Hextech Gunblade", "Heal for 25% of all damage dealt"), 
+     new Itm("items/ROD/rabadon.png", "Rabadon's Deathcap", "Wearer's Ability Damage increased by 50%"), 
+     new Itm("items/ROD/rageblade.png", "Guinsoo's Rageblade", "Attacks grant 5% Attack Speed. Stacks infinitely"), 
+     new Itm("items/ROD/morello.png", "Morellonomicon", "Spells deal burn damage equal to 20% of enemy’s max hp over 10s & prevent healing"), 
+     new Itm("items/ROD/locket.png", "Locket of the Iron Solari", "On start of combat, allies two spaces to the left and right gain a shield of 250 for 6 seconds"), 
+     new Itm("items/ROD/ionic.png", "Ionic Spark", "Whenever an enemy casts a spell, they take 125 true damage"),
+     new Itm("items/ROD/ludens.png", "Luden's Echo", "Deal 180 splash damage on ability hit"), 
+     new Itm("items/ROD/sorcerer.png", "Yuumi", "Wearer is also a Sorcerer")], 
     /*bow*/
-    [new Itm("items/BOW/divine.png", "Sword of the Divine", "Every 1s gain a 7% chance to gain 100% Critical Strike"), new Itm("items/BOW/rageblade.png"), new Itm("items/BOW/rapid.png"), new Itm("items/BOW/titanic.png"), 
-    new Itm("items/BOW/pd.png"), new Itm("items/BOW/cursed.png"), new Itm("items/BOW/shiv.png"), new Itm("items/BOW/blademaster.png")], 
+    [new Itm("items/BOW/divine.png", "Sword of the Divine", "Every 1s gain a 7% chance to gain 100% Critical Strike"), 
+     new Itm("items/BOW/rageblade.png", "Guinsoo's Rageblade", "Attacks grant 5% Attack Speed. Stacks infinitely"), 
+     new Itm("items/BOW/rapid.png", "Rapid Fire Cannon", "Attacks cannot be dodged. Attack Range is doubled"), 
+     new Itm("items/BOW/titanic.png", "Titanic Hydra", "Attacks deal 10% of the wearer's max HP as splash"), 
+     new Itm("items/BOW/pd.png", "Phantom Dancer", "Wearer dodges all Critial Strikes"), 
+     new Itm("items/BOW/cursed.png", "Cursed Blade", "Attacks have a 20% chance to Shrink (Reduce enemy's star level by 1)"), 
+     new Itm("items/BOW/shiv.png", "Stattik Shiv", "Every 3rd attack deals 100 splash magical damage to 2 additional targets"), 
+     new Itm("items/BOW/blademaster.png", "Blade of the Ruined King", "Wearer is also a Blademaster")], 
     /*belt*/
-    [new Itm("items/BELT/zekes.png", "Zeke's Herald", "On start of combat, allies 2 spaces to the left and right gain +15% Attack Speed"), new Itm("items/BELT/morello.png"), new Itm("items/BELT/titanic.png"), new Itm("items/BELT/warmog.png"), 
-    new Itm("items/BELT/red.png"), new Itm("items/BELT/zephyr.png"), new Itm("items/BELT/redemption.png"), new Itm("items/BELT/glacial.png")], 
+    [new Itm("items/BELT/zekes.png", "Zeke's Herald", "On start of combat, allies 2 spaces to the left and right gain +15% Attack Speed"), 
+     new Itm("items/BELT/morello.png", "Morellonomicon", "Spells deal burn damage equal to 20% of enemy’s max hp over 10s & prevent healing"), 
+     new Itm("items/BELT/titanic.png", "Titanic Hydra", "Attacks deal 10% of the wearer's max HP as splash"), 
+     new Itm("items/BELT/warmog.png", "Warmog's Armor", "Wearer regenerates 6% of missing health per second"), 
+     new Itm("items/BELT/red.png", "Red Buff", "Attacks burn for 20% of max HP over 10s and disable healing"), 
+     new Itm("items/BELT/zephyr.png", "Zephyr", "On start of combat, banish an enemy for 5 seconds"), 
+     new Itm("items/BELT/redemption.png", "Redemption", "At 25% health heal all nearby allies for 1200 HP"), 
+     new Itm("items/BELT/glacial.png", "Frozen Mallet", "Wearer is also a Glacial")], 
     /*vest*/
-    [new Itm("items/VEST/ga.png"), new Itm("items/VEST/locket.png"), new Itm("items/VEST/pd.png"), new Itm("items/VEST/red.png"), 
-    new Itm("items/VEST/thorn.png"), new Itm("items/VEST/swordbreaker.png"), new Itm("items/VEST/fheart.png"), new Itm("items/VEST/knight.png")], 
+    [new Itm("items/VEST/ga.png", "Guardian Angel", "Wearer revives with 500 Health after a 2 sec delay"), 
+     new Itm("items/VEST/locket.png", "Locket of the Iron Solari", "On start of combat, allies two spaces to the left and right gain a shield of 250 for 6 seconds"), 
+     new Itm("items/VEST/pd.png", "Phantom Dancer", "Wearer dodges all Critical Strikes"),
+     new Itm("items/VEST/red.png", "Red Buff", "Attacks burn for 20% of max HP over 10s and disable healing"), 
+     new Itm("items/VEST/thorn.png", "Thornmail", "Reflect 100% of mitigated damage taken from attacks as magic damage"), 
+     new Itm("items/VEST/swordbreaker.png", "Sword Breaker", "Attacks have a 25% chance to disarm"), 
+     new Itm("items/VEST/fheart.png", "Frozen Heart", "Adjacent enemies lose 25% Attack Speed"),
+     new Itm("items/VEST/knight.png", "Knight's Vow", "Wearer is also a Knight")], 
     /*cloak*/
-    [new Itm("items/CLOAK/gunblade.png"), new Itm("items/CLOAK/ionic.png"), new Itm("items/CLOAK/cursed.png"), new Itm("items/CLOAK/zephyr.png"), 
-    new Itm("items/CLOAK/swordbreaker.png"), new Itm("items/CLOAK/dragon.png"), new Itm("items/CLOAK/hush.png"), new Itm("items/CLOAK/runaans.png")], 
+    [new Itm("items/CLOAK/bt.png", "Bloodthrister", "Attacks heal for 40% of damage"), 
+     new Itm("items/CLOAK/ionic.png", "Ionic Spark", "Whenever an enemy casts a spell, they take 125 true damage"), 
+     new Itm("items/CLOAK/cursed.png", "Cursed Blade", "Attacks have a 20% chance to Shrink (Reduce enemy's star level by 1)"),
+     new Itm("items/CLOAK/zephyr.png", "Zephyr", "On start of combat, banish an enemy for 5 seconds"), 
+     new Itm("items/CLOAK/swordbreaker.png", "Sword Breaker", "Attacks have a 25% chance to disarm"), 
+     new Itm("items/CLOAK/dragon.png", "Dragon's Claw", "83% resistance to magic damage"),
+     new Itm("items/CLOAK/hush.png", "Hush", "33% chance on hit to prevent the enemy champion from gaining mana for 4 seconds"), 
+     new Itm("items/CLOAK/runaans.png", "Runaan's Hurricane", "Attacks hit 1 additional enemy. This extra hit does 75% damage and applies on-hit effects")], 
     /*tear*/
-    [new Itm("items/TEAR/gunblade.png"), new Itm("items/TEAR/ludens.png"), new Itm("items/TEAR/shiv.png"), new Itm("items/TEAR/redemption.png"), 
-    new Itm("items/TEAR/fheart.png"), new Itm("items/TEAR/hush.png"), new Itm("items/TEAR/seraphs.png"), new Itm("items/TEAR/demon.png")], 
+    [new Itm("items/TEAR/shojin.png", "Spear of Shojin", "After casting, gain 15% of max mana per attack"), 
+     new Itm("items/TEAR/ludens.png", "Luden's Echo", "Deal 180 splash damage on ability hit"),
+     new Itm("items/TEAR/shiv.png", "Stattik Shiv", "Every 3rd attack deals 100 splash magical damage to 2 additional targets"), 
+     new Itm("items/TEAR/redemption.png", "Redemption", "At 25% health heal all nearby allies for 1200 HP"), 
+     new Itm("items/TEAR/fheart.png", "Frozen Heart", "Adjacent enemies lose 25% Attack Speed"), 
+     new Itm("items/TEAR/hush.png", "Hush", "33% chance on hit to prevent the enemy champion from gaining mana for 4 seconds"),
+     new Itm("items/TEAR/seraphs.png", "Seraph's Embrace", "Regain 20 mana each time a spell is cast"), 
+     new Itm("items/TEAR/demon.png", "Darkin", "Wearer is also a Demon")], 
     /*spat*/
     /*change hog to fon lol*/
-    [new Itm("items/SPAT/gunblade.png"), new Itm("items/SPAT/sorcerer.png"), new Itm("items/SPAT/blademaster.png"), new Itm("items/SPAT/glacial.png"), 
-    new Itm("items/SPAT/knight.png"), new Itm("items/SPAT/runaans.png"), new Itm("items/SPAT/demon.png"), new Itm("items/SPAT/hog.png")]
+    [new Itm("items/SPAT/ass.png", "Youmuu's Ghostblade", "Wearer is also an Assassin"),
+     new Itm("items/SPAT/sorcerer.png", "Yuumi", "Wearer is also a Sorcerer"),
+     new Itm("items/SPAT/blademaster.png", "Blade of the Ruined King", "Wearer is also a Blademaster"), 
+     new Itm("items/SPAT/glacial.png", "Frozen Mallet", "Wearer is also a Glacial"), 
+     new Itm("items/SPAT/knight.png", "Knight's Vow", "Wearer is also a Knight"),
+     new Itm("items/SPAT/runaans.png", "Runaan's Hurricane", "Attacks hit 1 additional enemy. This extra hit does 75% damage and applies on-hit effects"),
+     new Itm("items/SPAT/demon.png", "Darkin", "Wearer is also a Demon"), 
+     new Itm("items/SPAT/hog.png", "Force of Nature", "Gain + team size")]
 ];
 var bench = [];
 function addItem(item) {
@@ -263,10 +315,6 @@ function resetItems() {
         }
     }
 }
-//the descriptions need to have the full html tags in order for the array to work
-function toSpan (name, desc) {
-    return "<span class=\"explanation\"><p id=\"expText\"><u>" + name +  "</u><br/>"+ desc + "</p></span>";
-}
 function updateCombo() {
     //x is the last element that was put into the bench
     var x = assignNumber(bench[bench.length -1]);
@@ -284,7 +332,7 @@ function updateCombo() {
         
         //for explanation
         //I suppose this can go into one line but would it be worth?
-        $("#explain").append(allItems[x][y].getDesc());
+        $("#explain").append(allItems[x][y].getDesc(bench[bench.length - 1], bench[i]));
         $(".explanation:last").prepend($('<img>', {src:allItems[x][y].getPath()}));
         
         //saves the item in the memo
