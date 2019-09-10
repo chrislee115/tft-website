@@ -136,31 +136,13 @@ function ItemSelect(divId) {
 }
 // BUILDER FUNCTIONS //
 //builder buttons
-//is this extraneous?
-$("#bfBtn").click(function () {
-    $("#bench").append('<span class="item" id="bf"><img src="items/bf.png"></span>');
-});
-$("#rodBtn").click(function () {
-    $("#bench").append('<span class="item" id="rod"><img src="items/rod.png"></span>');
-});
-$("#bowBtn").click(function () {
-    $("#bench").append('<span class="item" id="bow"><img src="items/bow.png"></span>');
-});
-$("#beltBtn").click(function () {
-    $("#bench").append('<span class="item" id="belt"><img src="items/belt.png"></span>');
-});
-$("#vestBtn").click(function () {
-    $("#bench").append('<span class="item" id="bf"><img src="items/vest.png"></span>');
-});
-$("#cloakBtn").click(function () {
-    $("#bench").append('<span class="item" id="cloak"><img src="items/cloak.png"></span>');
-});
-$("#tearBtn").click(function () {
-    $("#bench").append('<span class="item" id="tear"><img src="items/tear.png"></span>');
-});
-$("#spatBtn").click(function () {
-    $("#bench").append('<span class="item" id="spat"><img src="items/spat.png"></span>');
-});
+//adds item to bench when button is clicked
+function addItem(item) {
+    bench.push(item);
+    $("#bench").append('<span class="item" id="bf"><img src="items/' + item + '.png"></span>');
+    updateCombo();
+}
+
 /*can be used in the wheel as well, tho is it worth it?*/
 //this makes it easier to look for duplicates
 class Itm {
@@ -190,7 +172,8 @@ class Itm {
 //the descriptions need to have the full html tags in order for the array to work
 function toSpan (name, desc, itm1, itm2) {
     return "<span class=\"explanation\"><p id=\"expText\"><u>" + name +  "</u><br/>"
-        + itm1 + "+" + itm2 + "<br/>" 
+        + "<img src=items/" + itm1 + ".png height=\"30\" width=\"30\" />" + " + "
+        + "<img src=items/" + itm2 + ".png height=\"30\" width=\"30\" /> <br/>" 
         + desc + "</p></span>";
 }
 //bf rod bow belt vest cloak tear spat 
@@ -273,10 +256,6 @@ var allItems = [
      new Itm("items/SPAT/hog.png", "Force of Nature", "Gain + team size")]
 ];
 var bench = [];
-function addItem(item) {
-    bench.push(item);
-    updateCombo();
-}
 //updates all the combinations you can create 
 //0 is bf, 1 is rod, 2 is bow, 3 is belt, 4 is vest, 5 is cloak, 6 is tear, 7 is spat
 function assignNumber(x) {
